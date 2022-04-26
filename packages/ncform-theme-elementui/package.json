@@ -1,6 +1,6 @@
 {
   "name": "@ncform-plus/ncform-theme-elementui",
-  "version": "2.0.0",
+  "version": "2.0.1-alpha.0",
   "private": true,
   "main": "dist/ncformStdComps.umd.js",
   "module": "dist/ncformStdComps.es.js",
@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@ncform-plus/ncform-common": "^2.0.0",
+    "@ncform-plus/ncform-common": "^2.0.1-alpha.0",
     "element-plus": "^1.3.0-beta.1",
     "lodash-es": "^4.17.21",
     "sortablejs": "^1.14.0",

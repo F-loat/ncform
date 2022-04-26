@@ -1,6 +1,6 @@
 {
   "name": "@ncform-plus/ncform-common",
-  "version": "2.0.0",
+  "version": "2.0.1-alpha.0",
   "description": "ncform common",
   "main": "dist/ncformCommon.umd.js",
   "module": "dist/ncformCommon.es.js",
