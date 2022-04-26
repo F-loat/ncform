@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Schema | Ncform</title>
+    <meta name="description" content="ncform, a very nice configuration generation way to develop form ( vue, json-schema, form, generator )">
+    <link rel="stylesheet" href="/ncform-plus/assets/style.9323a44a.css">
+    <link rel="modulepreload" href="/ncform-plus/assets/vueNcform.es.30c77b3f.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/plugin-vue_export-helper.33e84ed3.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/Home.1fadf7ff.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/style.192c920b.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/style.c9a37e42.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/pages_config_index.md.6a1ee05b.lean.js">
+    <link rel="modulepreload" href="/ncform-plus/assets/app.1960ccde.js">
+    
+    <meta name="twitter:title" content="Schema | Ncform">
+  <meta property="og:title" content="Schema | Ncform">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/ncform-plus/" aria-label="Ncform, back to home" data-v-675d8756 data-v-4a583abe><!----> Ncform</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/ncform-plus/pages/docs/index" data-v-b8818f8c>文档 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/ncform-plus/pages/config/index" data-v-b8818f8c>配置 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/ncform-plus/pages/playground/index" data-v-b8818f8c>Playground <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/F-loat/ncform-plus" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>Github <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/ncform-plus/pages/docs/index" data-v-b8818f8c>文档 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/ncform-plus/pages/config/index" data-v-b8818f8c>配置 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/ncform-plus/pages/playground/index" data-v-b8818f8c>Playground <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/F-loat/ncform-plus" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>Github <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="#schema">Schema</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#props">Props</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#form-schema">form-schema</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#form-name">form-name</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#api">API</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformgetvalue">$ncformGetValue</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformreset">$ncformReset</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformvalidate">$ncformValidate</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformaddwidget">$ncformAddWidget</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformaddrule">$ncformAddRule</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformallrules">$ncformAllRules</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#ncformallwidgets">$ncformAllWidgets</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#event">Event</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#submit">submit</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#change">change</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h2 id="schema" tabindex="-1">Schema <a class="header-anchor" href="#schema" aria-hidden="true">#</a></h2><div class="language-js"><pre><code><span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&#39;object&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 根节点。只能是 object</span>
+  <span class="token literal-property property">properties</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">&lt;</span>filed name<span class="token operator">&gt;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      
+      <span class="token comment">/* 数据 */</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&#39;string&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 数据类型。可选：string / number / integer / boolean / object / array / HTML / COMP </span>
+      <span class="token comment">// 注意：大写的类型为特殊只读类型，一般使用场景为显示一个分隔栏。该数据在提交表单时会自动过滤掉</span>
+      <span class="token comment">// HTML: 配置 value，值为一段HTML【支持dx表达式】; </span>
+      <span class="token comment">// COMP: 配置 ui.widget 和 ui.widgetConfig</span>
+      
+      <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 字段值</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 字段默认值。value为空时取该值 </span>
+      <span class="token literal-property property">valueTemplate</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 值模板。根据提供的 dx表达式 动态计算 value 的值</span>
+
+      <span class="token comment">/* UI */</span>
+      <span class="token literal-property property">ui</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">columns</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token comment">// 占用列数，共12列。【支持dx表达式】</span>
+        <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 标签内容【支持dx表达式】</span>
+        <span class="token literal-property property">showLabel</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示标签（注意：当为 false 时，依然占着空间）</span>
+        <span class="token literal-property property">noLabelSpace</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 标签是否不占空间，优先级比showLabel高</span>
+        <span class="token literal-property property">legend</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 标题内容，当 widget 为 object，array 等布局时有效【支持dx表达式】</span>
+        <span class="token literal-property property">showLegend</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示标题。</span>
+        <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 描述信息【支持dx表达式】</span>
+        <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 占位内容【支持dx表达式】</span>
+        <span class="token literal-property property">disabled</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否禁用【支持dx表达式】</span>
+        <span class="token literal-property property">readonly</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否只读【支持dx表达式】</span>
+        <span class="token literal-property property">hidden</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否隐藏【支持dx表达式】</span>
+        <span class="token literal-property property">help</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 帮助信息</span>
+          <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示。默认不显示</span>
+          <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 帮助具体内容</span>
+          <span class="token literal-property property">iconCls</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 帮助图标样式名</span>
+          <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span> <span class="token comment">// 帮助文本</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">itemClass</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 表单项样式名</span>
+        <span class="token literal-property property">preview</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 预览</span>
+          <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 预览类型。可选值：video / audio / image / link</span>
+          <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 默认值: &#39;dx: {{$self}}&#39;【支持dx表达式】</span>
+          <span class="token literal-property property">clearable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示删除按钮</span>
+          <span class="token literal-property property">outward</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 外观，仅 type=image 时有效</span>
+            <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 宽度，0代表无限制</span>
+            <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 高度，0代表无限制</span>
+            <span class="token literal-property property">shape</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 外观形状。可选值：空值 / rounded / circle / ，默认值为空</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">linkFields</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// 关联字段。当值发生变化时，会触发关联字段的一些动作，比如校验</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">fieldPath</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 关联项字段路径。如：&#39;user.name&#39;，&#39;user[i].name&#39;</span>
+            <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 校验规则名，如：[&#39;required&#39;]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+        <span class="token comment">/* 渲染组件 */</span>
+        <span class="token literal-property property">widget</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 渲染组件名</span>
+        <span class="token literal-property property">widgetConfig</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// 组件配置</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+      <span class="token comment">/* 验证规则 */</span>
+      <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 所有验证规则都有两种赋值形式：</span>
+        <span class="token comment">// 简单版：&lt;rule name&gt;: &lt;rule value&gt;。如 required: true，minimum: 10</span>
+        <span class="token comment">// 详细版：&lt;rule name&gt;: { value: &lt;rule value&gt;, errMsg: &#39;&#39;, options: { deplay: xxx, delayMsg: &#39;&#39; } }。如以下 required 示例</span>
+
+        <span class="token comment">// for Any Instance Type</span>
+        <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 规则配置值</span>
+          <span class="token literal-property property">errMsg</span><span class="token operator">:</span> <span class="token string">&#39;it is required!&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 错误提示信息</span>
+          <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 可选项</span>
+            <span class="token literal-property property">delay</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token comment">// 延迟验证的时间（毫秒）</span>
+            <span class="token literal-property property">delayMsg</span><span class="token operator">:</span> <span class="token string">&#39;异步验证中..&#39;</span> <span class="token comment">// 延迟验证时的提示</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        number<span class="token punctuation">,</span> <span class="token comment">// value:boolean</span>
+        ajax<span class="token punctuation">,</span> <span class="token comment">// value：{ remoteUrl: &#39;&lt;url&gt;&#39;, method: &#39;&lt;get or post&gt;&#39;, paramName: &#39;&lt;请求参数名，值为控件的值&gt;&#39;, otherParams: {} }</span>
+
+        <span class="token comment">// for Numeric Instances </span>
+        minimum<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        maximum<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        multipleOf<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        exclusiveMaximum<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        exclusiveMinimum<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+
+        <span class="token comment">// for Strings</span>
+        url<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        tel<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        ipv4<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        ipv6<span class="token punctuation">,</span> <span class="token comment">// value: boolean       </span>
+        email<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        pattern<span class="token punctuation">,</span> <span class="token comment">// value: string。 如 &quot;\\d+&quot;</span>
+        hostname<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        dateTime<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+        maxLength<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        minLength<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+
+        <span class="token comment">// for Arrays</span>
+        contains<span class="token punctuation">,</span> <span class="token comment">// value: any</span>
+        maxItems<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        minItems<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        uniqueItems<span class="token punctuation">,</span> <span class="token comment">// value: boolean</span>
+
+        <span class="token comment">// for Objects</span>
+        maxProperties<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+        minProperties<span class="token punctuation">,</span> <span class="token comment">// value: number</span>
+
+        <span class="token comment">/* 自定义的验证规则 */</span>
+        <span class="token literal-property property">customRule</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          <span class="token literal-property property">script</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 【支持dx表达式】</span>
+          <span class="token literal-property property">errMsg</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 验证错误信息</span>
+          <span class="token literal-property property">linkItems</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// 当触发校验时，同时触发这些关联项的 customRule 规则校验（ 建议使用 ui.linkFields 来替代 ）</span>
+            <span class="token punctuation">{</span>
+              <span class="token literal-property property">fieldPath</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 关联项字段路径。如：&#39;user.name&#39;，&#39;user[i].name&#39;</span>
+              <span class="token literal-property property">customRuleIdx</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token comment">// 触发该项的 customRule 的索引项规则</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">globalConfig</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 全局配置</span>
+    <span class="token literal-property property">ignoreRulesWhenHidden</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 当控件隐藏时自动忽略掉其验证规则，即隐藏的控件验证规则不生效。默认为true</span>
+    <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 全局样式配置</span>
+      <span class="token literal-property property">formCls</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 添加到 form 的样式</span>
+      <span class="token literal-property property">invalidFeedbackCls</span><span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 错误提示消息的样式 </span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">constants</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 全局常量配置，可在dx表达中通过{{$const.}}来访问，如{{$const.userName}}</span>
+      <span class="token literal-property property">userName</span><span class="token operator">:</span> <span class="token string">&#39;daniel&#39;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">scrollToFailField</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 自动滚动到校验失败的字段</span>
+      <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否开启</span>
+      <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">&#39;body&#39;</span><span class="token punctuation">,</span> <span class="token comment">// 滚动的容器。</span>
+      <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token comment">// 滚动动画的持续时间(以毫秒为单位)</span>
+      <span class="token literal-property property">offset</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token comment">// 滚动时的偏移量</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="props" tabindex="-1">Props <a class="header-anchor" href="#props" aria-hidden="true">#</a></h2><h3 id="form-schema" tabindex="-1">form-schema <a class="header-anchor" href="#form-schema" aria-hidden="true">#</a></h3><p>用于描述表单的schema配置数据，具体数据结构请参考<a href="#ncform-schema">ncform schema</a></p><div class="language-"><pre><code>// Demo code
+&lt;ncform :form-schema=&quot;formSchema&quot;&gt;&lt;/ncform&gt;
+</code></pre></div><h3 id="form-name" tabindex="-1">form-name <a class="header-anchor" href="#form-name" aria-hidden="true">#</a></h3><p>表单名称，当使用部分 <a href="#ncform-api">ncform API</a> 时需要提供该值</p><div class="language-"><pre><code>// Demo code
+&lt;ncform form-name=&quot;your-form-name&quot;&gt;&lt;/ncform&gt;
+</code></pre></div><ul><li>v-model</li></ul><p>表单的值</p><div class="language-"><pre><code>// Demo code
+&lt;ncform :form-schema=&quot;formSchema&quot; v-model=&quot;formSchema.value&quot; &gt;&lt;/ncform&gt;
+</code></pre></div><ul><li>is-dirty.sync</li></ul><p>用于标识表单的值是否dirty（即修改）</p><p>通常的使用场景是通过该值，来判断提交按钮是否可用</p><div class="language-"><pre><code>// Demo code
+&lt;ncform :form-schema=&quot;formSchema&quot; v-model=&quot;formSchema.value&quot; :is-dirty.sync=&quot;isFormDirty&quot;&gt;&lt;/ncform&gt;
+&lt;button :disabled=&quot;!isFormDirty&quot;&gt;提交&lt;/button&gt;
+</code></pre></div><h2 id="api" tabindex="-1">API <a class="header-anchor" href="#api" aria-hidden="true">#</a></h2><p>ncform API 都是Vue实例级别的方法。</p><h3 id="ncformgetvalue" tabindex="-1">$ncformGetValue <a class="header-anchor" href="#ncformgetvalue" aria-hidden="true">#</a></h3><p>手动获取表单的值。</p><p>options.ignoreHiddenField: 是否忽略掉隐藏字段。默认为false</p><div class="language-"><pre><code>// Demo code:
+this.$ncformGetValue(&#39;demoForm&#39;, {ignoreHiddenField: true});
+</code></pre></div><h3 id="ncformreset" tabindex="-1">$ncformReset <a class="header-anchor" href="#ncformreset" aria-hidden="true">#</a></h3><p>重置表单。重置的值为最后一次外部更新 <code>ncform v-model</code> 的值</p><p>外部更新是指你直接用新value更新ncform的v-model值，而非操作表单控件发生的v-model的值的更新</p><p>注意：当你保存完表单，想以最后一次保存的值为reset的值，需要外部更新下ncform的v-model值</p><div class="language-"><pre><code>// Demo code:
+this.$ncformReset(&#39;demoForm&#39;);
+</code></pre></div><h3 id="ncformvalidate" tabindex="-1">$ncformValidate <a class="header-anchor" href="#ncformvalidate" aria-hidden="true">#</a></h3><p>校验表单的所有字段的规则。</p><div class="language-"><pre><code>// Demo code:
+this.$ncformValidate(&#39;demoForm&#39;).then(data =&gt; {
+  if (data.result) { // 校验通过
+    // do whatever you like to do. e.g. save form
+  }
+})
+</code></pre></div><h3 id="ncformaddwidget" tabindex="-1">$ncformAddWidget <a class="header-anchor" href="#ncformaddwidget" aria-hidden="true">#</a></h3><p>增加自定义表单控件</p><div class="language-"><pre><code>// Demo code:
+this.$ncformAddWidget({name: &#39;sayHi&#39;, widget: {
+  mixins: [ncformCommon.mixins.vue.controlMixin],
+  template: &#39;&lt;div&gt;hi {{modelVal}}&lt;/div&gt;&#39;,
+  props: {
+    value: {
+      type: [String]
+    },
+  },
+}});
+</code></pre></div><h3 id="ncformaddrule" tabindex="-1">$ncformAddRule <a class="header-anchor" href="#ncformaddrule" aria-hidden="true">#</a></h3><p>增加自定义验证规则</p><div class="language-"><pre><code>// Demo code:
+class MyCustomRule extends ncformCommon.ValidationRule {
+
+  constructor(props) {
+    super(props);
+    this.name = &#39;myCustom&#39;;
+    this.defaultErrMsg = &#39;yeah, show my custom rule message&#39;;
+  }
+
+  validateLogic(val, ruleVal) {
+    this.errMsg = &quot;must fill in &#39;daniel&#39;&quot;
+    return val === &#39;daniel&#39;;
+  }
+}
+
+this.$ncformAddRule({name: &#39;myCustom&#39;, rule: MyCustomRule});
+</code></pre></div><h3 id="ncformallrules" tabindex="-1">$ncformAllRules <a class="header-anchor" href="#ncformallrules" aria-hidden="true">#</a></h3><p>取得ncform所有注册的校验规则</p><div class="language-"><pre><code>// Demo code:
+const allRules = this.$ncformAllRules();
+</code></pre></div><h3 id="ncformallwidgets" tabindex="-1">$ncformAllWidgets <a class="header-anchor" href="#ncformallwidgets" aria-hidden="true">#</a></h3><p>取得ncform所有注册的表单组件</p><div class="language-"><pre><code>// Demo code:
+const allWidgets = this.$ncformAllWidgets();
+</code></pre></div><h2 id="event" tabindex="-1">Event <a class="header-anchor" href="#event" aria-hidden="true">#</a></h2><h3 id="submit" tabindex="-1">submit <a class="header-anchor" href="#submit" aria-hidden="true">#</a></h3><p>提交表单事件。</p><div class="language-"><pre><code>// Demo code:
+&lt;ncform @submit=&quot;submit()&quot;&gt;&lt;/ncform&gt;
+</code></pre></div><h3 id="change" tabindex="-1">change <a class="header-anchor" href="#change" aria-hidden="true">#</a></h3><p>表单项值更改事件</p><div class="language-"><pre><code>// Demo code:
+&lt;ncform @change=&quot;onChange&quot;&gt;&lt;/ncform&gt;
+
+onChange({paths, itemValue, formValue}) {
+  // paths: 发生值变化的项的路径
+  // itemValue：发生值变化的项的最新值
+  // formVallue: 表单的最新值
+}
+</code></pre></div></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-fb8d84c6><div class="edit" data-v-fb8d84c6><div class="edit-link" data-v-fb8d84c6 data-v-1ed99556><!----></div></div><div class="updated" data-v-fb8d84c6><!----></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"9c595633\",\"pages_config_index.md\":\"6a1ee05b\",\"pages_docs_index.md\":\"68fc1e42\",\"pages_playground_index.md\":\"dd3b376d\"}")</script>
+    <script type="module" async src="/ncform-plus/assets/app.1960ccde.js"></script>
+    
+  </body>
+</html>
